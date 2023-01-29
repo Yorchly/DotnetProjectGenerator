@@ -15,11 +15,12 @@ public static class DotnetCommandUtils
     /// <summary>
     /// Returns command to add new project to specified path.
     /// </summary>
-    /// <param name="args"></param>
+    /// <param name="projectConfig"></param>
     /// <returns></returns>
-    public static string GetAddNewProjectCommand(DotnetAddCommandArgs args) =>
-        $"dotnet new {args.ProjectType.Value} --name {args.ProjectName} --output {args.ProjectPath} --language" +
-        $" \"C#\" --framework {args.FrameworkType.Value} --force";
+    public static string GetAddNewProjectCommand(ProjectConfig projectConfig) =>
+        $"dotnet new {projectConfig.ProjectType.Value} --name {projectConfig.ProjectName} " +
+        $"--output {projectConfig.ProjectPath} --language" +
+        $" \"C#\" --framework {projectConfig.FrameworkType.Value} --force";
 
     /// <summary>
     /// Returns command to add project to solution.
@@ -33,7 +34,7 @@ public static class DotnetCommandUtils
     /// <summary>
     /// Returns the command to add in project 1 a reference to project 2.
     /// </summary>
-    /// <param name="projectCsprojFullPath1"></param>
+    /// <param name="projectCsprojFullPath1">full path must include name of project with csproj extension.</param>
     /// <param name="projectCsprojFullPath2"></param>
     /// <returns></returns>
     public static string GetAddReferenceProjectToProject(

@@ -1,4 +1,4 @@
-﻿namespace DotnetProjectGenerator.Console.Types;
+﻿namespace DotnetProjectGenerator.Console.Types.Enums;
 
 public class FrameworkType
 {

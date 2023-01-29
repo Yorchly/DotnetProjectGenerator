@@ -1,4 +1,4 @@
-﻿namespace DotnetProjectGenerator.Console.Types;
+﻿namespace DotnetProjectGenerator.Console.Types.Enums;
 
 public class ProjectType
 {
@@ -7,7 +7,7 @@ public class ProjectType
     public static ProjectType ClassLib { get => new ProjectType("classlib"); }
     public static ProjectType Xunit { get => new ProjectType("xunit"); }
 
-    private ProjectType(string value) => 
+    private ProjectType(string value) =>
         Value = value;
 
     public override string ToString() => Value;
